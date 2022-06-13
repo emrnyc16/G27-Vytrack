@@ -20,9 +20,8 @@ import java.util.Set;
 public class TC12 extends TestBaseTruckDriver {
 
     @Test
-    public void test() throws IOException {
+    public void test() throws IOException{
 // TC12=Check if truck driver is able to click "Add Event button and opens a pop-up page
-
         WebElement ele = driver.findElement(By.xpath("//span[contains(text(),'Fleet')]"));
 
 //Creating object of an Actions class
