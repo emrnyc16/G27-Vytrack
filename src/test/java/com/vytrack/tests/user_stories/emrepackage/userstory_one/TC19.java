@@ -1,6 +1,7 @@
 package com.vytrack.tests.user_stories.emrepackage.userstory_one;
 
 import com.vytrack.tests.user_stories.emrepackage.utilities.TestBaseTruckDriver;
+import com.vytrack.tests.user_stories.emrepackage.utilities.WebDriverFactory;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -17,11 +18,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Set;
 
-public class TC12 extends TestBaseTruckDriver {
+public class TC19 extends TestBaseTruckDriver {
 
     @Test
-    public void test() throws IOException{
+    public void test() throws IOException {
 // TC12=Check if truck driver is able to click "Add Event button and opens a pop-up page
+
         WebElement ele = driver.findElement(By.xpath("//span[contains(text(),'Fleet')]"));
 
 //Creating object of an Actions class
@@ -50,10 +52,16 @@ public class TC12 extends TestBaseTruckDriver {
 // Finding Title area and sending " B26-G27 " then verifying if it's displayed
 
         WebElement title=driver.findElement(By.xpath("//input[@name='oro_calendar_event_form[title]']"));
-        title.sendKeys("B26-G27");
+        title.sendKeys("No ORganizer Name");
+
+        WebElement  save= driver.findElement(By.xpath("//button[.='Save']"));
+        save.click();
+        WebDriverWait wait = new WebDriverWait(driver,10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h4[.='Activity']")));
+
         File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(src,new File("C:\\Users\\emree\\OneDrive\\Desktop\\VyTrack\\TestCase12.png"));
-        Assert.assertTrue(title.isDisplayed(),"It is not displayed");
+        FileUtils.copyFile(src,new File("C:\\Users\\emree\\OneDrive\\Desktop\\VyTrack\\TestCase19.png"));
+
 
 
     }
