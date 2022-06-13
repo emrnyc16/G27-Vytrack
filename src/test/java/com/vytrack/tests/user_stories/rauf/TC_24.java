@@ -3,6 +3,7 @@ package com.vytrack.tests.user_stories.rauf;
 import com.vytrack.tests.user_stories.rauf.base.TestBase;
 import com.vytrack.tests.user_stories.rauf.util.LoginUtil;
 import com.vytrack.tests.user_stories.rauf.util.MenuUtil;
+import com.vytrack.tests.user_stories.rauf.util.OtherUtils;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.testng.Assert;
@@ -22,8 +23,7 @@ public class TC_24 extends TestBase {
 
 
         Thread.sleep(2000);
-        WebElement settingBtn = driver.findElement(By.xpath("//div[@class='column-manager dropdown']"));
-        settingBtn.click();
+        OtherUtils.gridSettingButton(driver);
 
         WebElement gridSettingModal = driver.findElement(By.xpath("//*[.='Grid Settings']"));
         File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
