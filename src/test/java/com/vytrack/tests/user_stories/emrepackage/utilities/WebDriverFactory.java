@@ -47,7 +47,7 @@ public class WebDriverFactory {
 
     public static void explicitWait(WebDriver driver, String location){
         WebDriverWait wait = new WebDriverWait(driver,15);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(location))).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(location)));
     }
 }
 
