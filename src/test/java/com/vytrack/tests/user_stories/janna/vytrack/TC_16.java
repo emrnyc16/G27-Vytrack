@@ -1,4 +1,4 @@
-package com.vytrack.tests.user_stories.janna;
+package com.vytrack.tests.user_stories.janna.vytrack;
 
 import com.vytrack.tests.user_stories.janna.TestBase.TestBase;
 import com.vytrack.tests.user_stories.janna.utility.WebdriverFactory;
