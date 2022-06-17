@@ -12,26 +12,28 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 
-
-public class TC14_1_StoreManager extends TestBase {
+public class TC14_3_StoreManager extends TestBase {
 
     @Test
     public void loginStoreManager() throws InterruptedException, IOException {
         Login.login_Vytrack(driver, "storemanager210", "UserUser123");
         WebElement fleetModule = driver.findElement(By.xpath("//ul[@class='nav-multilevel main-menu']/li[2]"));
-       fleetModule.click();
+        fleetModule.click();
 
-       WebElement vehiclesModel = driver.findElement(By.xpath("//span[.='Vehicles Model']"));
-       vehiclesModel.click();
+        WebElement vehiclesModel = driver.findElement(By.xpath("//span[.='Vehicles Model']"));
+        vehiclesModel.click();
 
-       WebElement allVehiclesModel = driver.findElement(By.xpath("//h1[@class='oro-subtitle']"));
-       allVehiclesModel.isDisplayed();
+        WebElement createVehicleModel = driver.findElement(By.xpath("//a[@title='Create Vehicles Model']"));
+        createVehicleModel.click();
 
-        Thread.sleep(3000);
+        WebElement fuelType = driver.findElement(By.xpath("(//ul[@class='select2-results'])[2]"));
+        fuelType.isEnabled();
+
+       Thread.sleep(3000);
 
         File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(source, new File("C:\\Users\\aydog\\Downloads\\VyTrack Store Manager\\ScreenShot.png"));
-        Thread.sleep(3000);
+
 
 
     }
