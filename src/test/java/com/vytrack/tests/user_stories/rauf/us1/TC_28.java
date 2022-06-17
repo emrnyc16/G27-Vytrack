@@ -1,29 +1,21 @@
-package com.vytrack.tests.user_stories.rauf;
+package com.vytrack.tests.user_stories.rauf.us1;
 
 import com.vytrack.tests.user_stories.rauf.base.TestBase;
 import com.vytrack.tests.user_stories.rauf.util.LoginUtil;
 import com.vytrack.tests.user_stories.rauf.util.MenuUtil;
-import com.vytrack.tests.user_stories.rauf.util.OtherUtils;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.io.FileUtils;
+import com.vytrack.tests.user_stories.rauf.util.ButtonsUtil;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.io.File;
 import java.io.IOException;
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class TC_28 extends TestBase {
 
 
     @Test
     public void verifySelectAllBtn() throws InterruptedException, IOException {
-        LoginUtil.loginAnyUser(driver);
+        LoginUtil.login(driver);
         MenuUtil.vehicleMenu(driver);
 
         Thread.sleep(2000);
@@ -47,7 +39,7 @@ public class TC_28 extends TestBase {
         Assert.assertTrue(getTextSelectAll.contains("disabled"));
 
 
-        OtherUtils.takeScreenShot(driver,"GS_selectALl.png");
+        ButtonsUtil.takeScreenShot(driver,"GS_selectALl.png");
 
 
     }

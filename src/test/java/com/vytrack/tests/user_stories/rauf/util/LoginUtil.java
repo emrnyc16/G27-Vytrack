@@ -7,10 +7,14 @@ import org.openqa.selenium.WebElement;
 public class LoginUtil {
 
 
-    public static void loginAnyUser(WebDriver driver){
-        driver.get("https://qa2.vytrack.com");
-        driver.findElement(By.xpath("//input[@id='prependedInput']")).sendKeys("user177");
-        driver.findElement(By.xpath("//input[@id='prependedInput2']")).sendKeys("UserUser123");
+
+
+    public static void login(WebDriver driver){
+
+        driver.findElement(By.xpath("//input[@id='prependedInput']")).sendKeys(ConfReader.getProperty("truckUser"));
+        driver.findElement(By.xpath("//input[@id='prependedInput2']")).sendKeys(ConfReader.getProperty("truckPassword"));
         driver.findElement(By.xpath("//button[@type='submit']")).click();
+
+
     }
 }

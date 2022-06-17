@@ -1,19 +1,15 @@
-package com.vytrack.tests.user_stories.rauf;
+package com.vytrack.tests.user_stories.rauf.us1;
 
 import com.vytrack.tests.user_stories.rauf.base.TestBase;
 import com.vytrack.tests.user_stories.rauf.util.LoginUtil;
 import com.vytrack.tests.user_stories.rauf.util.MenuUtil;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 public class TC_26 extends TestBase {
 
@@ -21,7 +17,7 @@ public class TC_26 extends TestBase {
 
     @Test
     public void verifyCheckboxDeSelect() throws InterruptedException, IOException {
-        LoginUtil.loginAnyUser(driver);
+        LoginUtil.login(driver);
         MenuUtil.vehicleMenu(driver);
 
         WebElement settingBtn = driver.findElement(By.xpath("//div[@class='column-manager dropdown']"));
