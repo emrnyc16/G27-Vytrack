@@ -44,12 +44,9 @@ public class TC_05 {
         String actualMsj = afterLogin.getText();
         String expectedMsj ="Invalid user name or password.";
 
-       if(actualMsj.equals(expectedMsj)){
-           System.out.println("it is passed!");
-       }else{
-           System.out.println("it is failed!");
+        Assert.assertTrue(actualMsj.equals(expectedMsj));
 
-       }
+
         driver.quit();
 
     }
