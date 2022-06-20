@@ -1,5 +1,7 @@
 package com.vytrack.tests.user_stories.rauf.util;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -11,6 +13,7 @@ public class ConfReader {
     static {
         try {
             FileInputStream file = new FileInputStream("configuration.properties");
+
             properties.load(file);
             file.close();
         } catch (IOException e) {
@@ -22,5 +25,7 @@ public class ConfReader {
     public static String getProperty(String key){
         return properties.getProperty(key);
     }
+
+
 
 }

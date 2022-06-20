@@ -9,11 +9,11 @@ public class LoginUtil {
 
 
 
-    public static void login(WebDriver driver){
+    public static void login(){
 
-        driver.findElement(By.xpath("//input[@id='prependedInput']")).sendKeys(ConfReader.getProperty("truckUser"));
-        driver.findElement(By.xpath("//input[@id='prependedInput2']")).sendKeys(ConfReader.getProperty("truckPassword"));
-        driver.findElement(By.xpath("//button[@type='submit']")).click();
+        Driver.getDriver().findElement(By.xpath("//input[@id='prependedInput']")).sendKeys(ConfReader.getProperty("truckUser"));
+        Driver.getDriver().findElement(By.xpath("//input[@id='prependedInput2']")).sendKeys(ConfReader.getProperty("truckPassword"));
+        Driver.getDriver().findElement(By.xpath("//button[@type='submit']")).click();
 
 
     }
