@@ -1,6 +1,7 @@
 package com.vytrack.tests.user_stories.rauf.us1;
 
 import com.vytrack.tests.user_stories.rauf.base.TestBase;
+import com.vytrack.tests.user_stories.rauf.util.Driver;
 import com.vytrack.tests.user_stories.rauf.util.LoginUtil;
 import com.vytrack.tests.user_stories.rauf.util.MenuUtil;
 import com.vytrack.tests.user_stories.rauf.util.ButtonsUtil;
@@ -18,15 +19,15 @@ public class TC_24 extends TestBase {
 
     @Test
     public void clickGridSettingButton() throws InterruptedException, IOException {
-        LoginUtil.login(driver);
-        MenuUtil.vehicleMenu(driver);
+        LoginUtil.login();
+        MenuUtil.vehicleMenu();
 
 
         Thread.sleep(2000);
-        ButtonsUtil.gridSettingButton(driver);
+        ButtonsUtil.gridSettingButton();
 
-        WebElement gridSettingModal = driver.findElement(By.xpath("//*[.='Grid Settings']"));
-        File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        WebElement gridSettingModal = Driver.getDriver().findElement(By.xpath("//*[.='Grid Settings']"));
+        File src=((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(src,new File("C:\\Users\\raliyev\\Desktop\\Cydeo\\Screenshots\\Grid_Setting.png"));
         Assert.assertTrue(gridSettingModal.getText().equals("Grid Settings"));
 
