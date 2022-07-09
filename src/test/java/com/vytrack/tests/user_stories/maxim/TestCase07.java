@@ -2,7 +2,7 @@ package com.vytrack.tests.user_stories.maxim;
 
 import com.vytrack.tests.user_stories.emrepackage.utilities.WebDriverFactory;
 import com.vytrack.tests.user_stories.maxim.utilities.TestBase;
-import com.vytrack.tests.user_stories.rauf.util.OtherUtils;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.testng.Assert;

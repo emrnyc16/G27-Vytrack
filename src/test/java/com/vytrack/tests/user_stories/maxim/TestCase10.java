@@ -45,15 +45,10 @@ public class TestCase10 extends TestBase {
         WebElement selectType = driver.findElement(By.xpath("//span[.='Choose a value...']"));
         selectType.click();
 
-        //Select selectObj = new Select(selectType);
-        //selectObj.getFirstSelectedOption();
 
         WebElement selectPersonalLoan = driver.findElement(By.xpath(("//div[.='Personal Loan']")));
         selectPersonalLoan.click();
 
-
-       //WebElement selectPersonalLoan = driver.findElement(By.linkText("Personal Loan"));
-       //selectPersonalLoan.click();
 
        //-----------------
 
